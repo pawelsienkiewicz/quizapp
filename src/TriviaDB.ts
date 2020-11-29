@@ -17,6 +17,6 @@ export const getQuestions = async () => {
   const data = await (await fetch(url)).json();
   return data.results.map((question: Question) => ({
     ...question,
-    answer: randomize([...question.incorrect_answers, question.correct_answer]),
+    answers: randomize([...question.incorrect_answers, question.correct_answer]),
   }));
 };

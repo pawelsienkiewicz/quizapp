@@ -11,7 +11,7 @@ type Props = {
 
 const QuestionCard: React.FC<Props> = ({
   answers,
-  callback, 
+  callback,
   question,
   givenAnswer,
   questionNumber,
@@ -24,8 +24,8 @@ const QuestionCard: React.FC<Props> = ({
     <p>{question}</p>
     <div>
       {answers.map((answer) => (
-        <div>
-          <button disabled={givenAnswer} onClick={callback}>
+        <div key={answer}>
+          <button disabled={givenAnswer} onClick={callback} value={answer}>
             <span>{answer}</span>
           </button>
         </div>
